@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #C9A84C;
+  --gold-dim: #8A6E2F;
+  --black: #0A0A0A;
+  --black-mid: #111111;
+  --black-light: #1A1A1A;
+  --white: #F5F2EC;
+  --white-dim: #B0AA9E;
+}
+
+@theme inline {
+  --color-gold: #C9A84C;
+  --color-gold-dim: #8A6E2F;
+  --color-black: #0A0A0A;
+  --color-black-mid: #111111;
+  --color-black-light: #1A1A1A;
+  --color-white: #F5F2EC;
+  --color-white-dim: #B0AA9E;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* fixed nav height */
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+}
+
+/* Fee slider */
+input[type="range"].fee-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #C9A84C var(--fill, 0%), #2A2A2A var(--fill, 0%));
+  width: 100%;
+}
+input[type="range"].fee-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #C9A84C;
+  cursor: pointer;
+  border-radius: 0;
+  border: 2px solid #111111;
+  box-shadow: 0 0 0 1px #C9A84C;
+}
+input[type="range"].fee-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #C9A84C;
+  cursor: pointer;
+  border-radius: 0;
+  border: 2px solid #111111;
+  box-shadow: 0 0 0 1px #C9A84C;
+}
+input[type="range"].fee-slider::-moz-range-track {
+  height: 2px;
+  background: #2A2A2A;
+}
+
+/* Input autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #1A1A1A inset;
+  -webkit-text-fill-color: #F5F2EC;
+  transition: background-color 5000s ease-in-out 0s;
+}
